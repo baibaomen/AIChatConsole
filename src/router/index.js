@@ -161,6 +161,7 @@ export const asyncRoutes = [
       }
     ]
   },
+  /* 去除营销管理菜单
   {
     path: '/sales',
     component: Layout,
@@ -188,7 +189,7 @@ export const asyncRoutes = [
         meta: { title: '套餐列表', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  },*/
   {
     path: '/ai',
     component: Layout,
@@ -217,6 +218,7 @@ export const asyncRoutes = [
       }
     ]
   },
+  /* 去除面具和插件管理菜单
   {
     path: '/function',
     component: Layout,
@@ -238,7 +240,8 @@ export const asyncRoutes = [
         meta: { title: '插件列表', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  },*/
+  /* 去除历史日志菜单
   {
     path: '/history',
     component: Layout,
@@ -266,7 +269,15 @@ export const asyncRoutes = [
         meta: { title: '登录日志', icon: 'dashboard', affix: true }
       }
     ]
+  },*/
+  /* 把登录日志提升为一级菜单 */
+  {
+    path: 'login',
+    component: () => import('@/views/login/record'),
+    name: 'loginRecordList',
+    meta: { title: '登录日志', icon: 'dashboard', affix: true }
   },
+  /* 去除文件菜单
   {
     path: '/file',
     component: Layout,
@@ -281,7 +292,7 @@ export const asyncRoutes = [
         meta: { title: '文件列表', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  },*/
   {
     path: '/users',
     component: Layout,
@@ -297,6 +308,7 @@ export const asyncRoutes = [
       }
     ]
   },
+  /*
   {
     path: '/website',
     component: Layout,
@@ -326,7 +338,7 @@ export const asyncRoutes = [
         meta: { title: '关于AIChat', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  },*/
   /*
   {
     path: '/permission',
