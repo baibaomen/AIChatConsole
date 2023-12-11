@@ -10,13 +10,12 @@
     <panel-group :basic-data="basicData" />
     <!--  @handleSetLineChartData="handleSetLineChartData" -->
 
-    <el-alert
+    <!--<el-alert
       title="订单总数、金额仅统计已支付的订单。订单金额仅保留整数部分。"
       type="warning"
       :closable="false"
       style="margin-bottom: 20px;"
     />
-
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :dates="dates" :chart-data="orderData" title="每日订单总数" />
     </el-row>
@@ -24,7 +23,7 @@
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :dates="dates" :chart-data="orderFeeData" title="每日订单金额（元）" />
     </el-row>
-
+-->
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :dates="dates" :chart-data="userData" title="每日用户总数" />
     </el-row>

@@ -142,11 +142,11 @@ export const asyncRoutes = [
         path: 'list',
         component: () => import('@/views/member/index'),
         name: 'membersList',
-        meta: { title: '会员列表', icon: 'dashboard', affix: true }
+        meta: { title: '用户列表', icon: 'dashboard', affix: true }
       }
     ]
   },
-  {
+  /* {
     path: '/order',
     component: Layout,
     redirect: '/order/list',
@@ -160,7 +160,7 @@ export const asyncRoutes = [
         meta: { title: '订单列表', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  },*/
   /* 去除营销管理菜单
   {
     path: '/sales',
@@ -241,7 +241,6 @@ export const asyncRoutes = [
       }
     ]
   },*/
-  /* 去除历史日志菜单
   {
     path: '/history',
     component: Layout,
@@ -250,7 +249,7 @@ export const asyncRoutes = [
     name: 'chat',
     meta: { title: '历史日志', icon: 'dashboard', affix: true },
     children: [
-      {
+      /* {
         path: 'chat',
         component: () => import('@/views/chat/index'),
         name: 'chatLog',
@@ -261,7 +260,7 @@ export const asyncRoutes = [
         component: () => import('@/views/drawTask/index'),
         name: 'drawTask',
         meta: { title: '绘画日志', icon: 'dashboard', affix: true }
-      },
+      },*/
       {
         path: 'login',
         component: () => import('@/views/login/record'),
@@ -269,13 +268,6 @@ export const asyncRoutes = [
         meta: { title: '登录日志', icon: 'dashboard', affix: true }
       }
     ]
-  },*/
-  /* 把登录日志提升为一级菜单 */
-  {
-    path: 'login',
-    component: () => import('@/views/login/record'),
-    name: 'loginRecordList',
-    meta: { title: '登录日志', icon: 'dashboard', affix: true }
   },
   /* 去除文件菜单
   {
