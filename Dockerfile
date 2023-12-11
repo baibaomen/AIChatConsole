@@ -1,26 +1,30 @@
-# 注意，请先运行npm run build:prod生成dist文件
+FROM node:18 as build
 
-# docker build -t nanjiren01/aichat-console:0.9.5 ../AIChatConsole
-# docker push nanjiren01/aichat-console:0.9.5
-# docker tag nanjiren01/aichat-console:0.9.5 nanjiren01/aichat-console:pro-latest
-# docker push nanjiren01/aichat-console:pro-latest
+WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build:prod
+
+RUN npm prune --production
+
+RUN npm cache clean --force
 
 FROM nginx
 
-
-RUN mkdir -p /app/
-
-COPY dist /usr/share/nginx/html/
+COPY --from=build /app/dist /usr/share/nginx/html/
 
 ENV BASE_URL=aichat-admin:8080
 
 COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/start.sh ~/start.sh
+COPY docker/start.sh /start.sh
+
+RUN chmod +x /start.sh
 
 EXPOSE 80
 
-CMD ["bash", "~/start.sh"]
-
-
-
+CMD ["bash", "/start.sh"]
